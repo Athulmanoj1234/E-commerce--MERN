@@ -1,0 +1,50 @@
+.fulladminpage-add{
+    display: flex;
+}
+.productadd-form{
+    margin-left: 4rem;
+    margin-top: 2rem;
+}
+.productadd-form input[type=text]{
+    border-width: 0.6px;
+}
+.producttitle-add p{
+    margin-left: 3rem;
+}
+.price-add p{
+    margin-left: 3rem;
+}
+.priceoffer-add{
+    display: flex;
+}
+.offer-add p{
+    margin-left: 3rem;
+}
+.product-description{
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+}
+.productcategory-add{
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+.upload{
+    margin-left: 3rem;
+}
+.upload-button{
+    margin-top: 2rem;
+    margin-left: 23rem;
+}
+.upload-button button{
+    padding: 10px 40px;
+    background-color: brown;
+    color: #fff;
+    border-radius: 0;
+}
+.upload-button button:hover{
+    transform: scale(1.05);
+}
+.loginregister-admin{
+    margin-left: -10rem;
+    margin-top: 1rem;
+}

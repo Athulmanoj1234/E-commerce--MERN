@@ -1,0 +1,478 @@
+.full-banner{
+    background-image: linear-gradient(#E8DBFC,#fff);
+}
+.banners{
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+.text-banner{
+    margin-left: 8rem;
+    margin-top: 10rem; 
+}
+.banner-2{
+    margin-top: 8rem;
+}
+h3.new-arrive{
+    font-style: italic;
+    font-weight: 800;
+}
+h2.collections{
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: 800;
+    font-size: 2.7rem;
+}
+button.collections-button{
+    border-radius: 50px;
+    border: none;
+    background: #d92525;
+    color: #fff;
+    font-size: 16px;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 25px;
+}
+button.collections-button:hover{
+    background-color: #b71b1b;   /* Darker red on hover */
+    transform: scale(1.05);   /* Slightly larger on hover */
+    cursor: pointer;
+}
+button.collections-button .button-arrow{
+    margin-left: 0.9rem;
+}
+.img-banner img{
+    max-height: 30rem;
+}
+.popular-men{
+    display: flex;
+    justify-content: center;
+}
+.popular-men h1{
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+.popular-men h1::after{
+    
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px; 
+    background-color: black;
+}
+.popular-men-card{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-left: -2rem;
+    width: -1rem;
+    flex-wrap: wrap;
+}
+.card-overall{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-left: 3rem;
+    width: 63rem;
+    flex-wrap: wrap;
+}
+.popular-men-card img{
+    margin-top: 2rem;
+    max-height: 17rem;
+    width: 13rem;
+}
+.card-image{
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+}
+.card-image:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.banner2-1{
+    margin-bottom: 5rem;
+}
+.second-banner{
+    background-image: linear-gradient(#E8DBFC,#fff);
+    margin-top: 20rem;
+    margin-right: 16.6rem;
+    margin-left: 16.6rem;
+    text-align: center;
+}
+.heading-1{
+    font-family: 'Helvetica', sans-serif; /* Use the desired font */
+    font-size: 48px; /* Adjust as per your needs */
+    font-weight: bold; /* Ensures the text is thick */
+    line-height: 1.2; /* Adjust the space between lines */
+    color: #000000; /* Use black or adjust for your design */
+    margin-top: 0.2rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+.heading-2{
+    font-family: 'Helvetica', sans-serif;
+    font-size: 18px;
+    font-weight: 300; /* Lighter weight for the subheading */
+    text-align: center;
+    color: #666666; /* Lighter gray tone for subheading */
+    margin-top: 1rem; /* Adjust spacing if needed */
+    letter-spacing: 1px; /* Add spacing between letters for subheading */
+    margin-left: 0;
+    margin-right: 0;
+}
+.seller-button{
+    border-radius: 50px;
+    border: none;
+    background: #d92525;
+    color: #fff;
+    font-size: 16px;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 25px;
+}
+.seller-button:hover{
+    transform: scale(1.05);
+    background-color: #b71b1b;
+}
+.third-banner h2{
+    margin-top: 19rem;
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+.third-banner h2::after{
+    margin-top: 1rem;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+.product-items{
+    display: flex;
+}
+.newcollections-card{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-left: -2rem;
+    width: -1rem;
+    flex-wrap: wrap;
+}
+.card-overall1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-left: 3rem;
+    width: 63rem;
+    flex-wrap: wrap;
+}
+.newcollections-card img{
+    margin-top: 2rem;
+    max-height: 17rem;
+    width: 13rem;
+}
+.card-image1{
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+}
+.card-image1:hover{
+    transform: scale(1.05);
+}
+.fourth-banner{
+    background-image: linear-gradient(#E8DBFC,#fff);
+    margin-top: 26rem;
+    margin-right: 16.6rem;
+    margin-left: 16.6rem;
+    text-align: center
+}
+.fourth-first h1{
+    font-weight: 700;
+}
+.fourth-first p{
+    font-weight: 300; /* Lighter weight for the subheading */
+    text-align: center;
+    color: #666666; /* Lighter gray tone for subheading */
+    margin-top: 1rem; /* Adjust spacing if needed */
+    letter-spacing: 1px; /* Add spacing between letters for subheading */
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+}
+.fourth-first input{
+    width: 409px;
+    padding: 11px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    color: #333; /* Dark gray text color */
+    background-color: #fff; /* White background */
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+.fourth-first input::placeholder {
+    color: #b0b0b0; /* Light gray placeholder text */
+  }
+  
+.fourth-first input:focus {
+    border-color: #333; /* Darker border on focus */
+  }
+.fourth-first button{
+    padding: 12px 20px;
+    background-color: black;
+    color: #fff;
+    border-radius: 50px;
+    margin-left: -6rem;
+}
+.fourth-second{
+    margin-top: 10rem;
+}
+.fourth-second h1{
+    color: #333;
+}
+.about-contact{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 21rem;
+    margin-right: 20rem;
+}
+.whatsapp-facebook-icons{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 28rem;
+    margin-right: 29rem;
+    margin-top: 1rem;
+}
+.fourth-second p{
+    margin-top: 2rem;
+    font-size: 0.8rem;
+}
+@media (max-width: 1024px) and (min-width: 600px) {
+    .text-banner {
+        margin-left: 4rem;
+        margin-top: 5rem;
+    }
+
+    h2.collections {
+        font-size: 2rem; /* Reduce font size for tablet */
+    }
+
+    button.collections-button {
+        font-size: 14px; /* Reduce button text size */
+        padding: 8px 20px; /* Adjust padding */
+    }
+}
+/* For Mobile Phones (width less than 600px) */
+@media (max-width: 600px) {
+    .text-banner {
+        margin-left: 1rem;
+        margin-top: 3rem;
+    }
+
+    h2.collections {
+        font-size: 1.8rem; /* Further reduce font size for mobile */
+        text-align: center; /* Center align text for mobile */
+    }
+
+    h3.new-arrive {
+        text-align: center; /* Center align the text */
+        font-weight: 700;
+    }
+
+    button.collections-button {
+        font-size: 12px; /* Smaller text for mobile */
+        padding: 6px 15px; /* Adjust padding */
+        width: 100%; /* Make the button full-width */
+    }
+}
+@media (max-width: 480px) {
+    .card-image {
+      width: 100%; /* Make cards take full width on mobile */
+      max-width: 16rem; /* Ensure max width for mobile screens */
+    }
+  
+    .card-overall {
+      flex-direction: column; /* Stack cards vertically on mobile */
+      align-items: center;
+    }
+  
+    .popular-men-card {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center;
+    }
+  
+    .card-image img {
+      width: 100%; /* Ensure the image scales properly on mobile */
+      height: auto; /* Maintain aspect ratio */
+    }
+  }
+  @media (max-width: 1024px) {
+    .second-banner {
+        margin-top: 10rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .heading-1 {
+        font-size: 36px; /* Reduce font size for tablets */
+    }
+
+    .heading-2 {
+        font-size: 16px; /* Adjust subheading font size */
+    }
+
+    .seller-button {
+        padding: 8px 20px; /* Adjust button padding */
+        font-size: 14px;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    .second-banner {
+        margin-top: 5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .heading-1 {
+        font-size: 28px; /* Further reduce font size for mobile */
+    }
+
+    .heading-2 {
+        font-size: 14px; /* Further adjust subheading font size */
+    }
+
+    .seller-button {
+        padding: 6px 18px; /* Further adjust button padding */
+        font-size: 12px;
+    }
+}
+
+/* For Smaller Mobile Devices */
+@media (max-width: 480px) {
+    .second-banner {
+        margin-top: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .heading-1 {
+        font-size: 24px; /* Smallest font size for very small screens */
+    }
+
+    .heading-2 {
+        font-size: 12px;
+    }
+
+    .seller-button {
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 1024px) {
+    .fourth-banner {
+        margin-right: 8rem;  /* Adjust margins for tablets */
+        margin-left: 8rem;
+        margin-top: 15rem;
+    }
+
+    .fourth-first input {
+        width: 80%;  /* Make the input field take full width */
+        max-width: 500px;  /* Restrict maximum width */
+    }
+
+    .fourth-first button {
+        margin-left: 0; /* Align the button better on smaller screens */
+        margin-top: 1rem;
+        width: 60%;
+        max-width: 150px;  /* Restrict button width */
+    }
+}
+
+/* Responsive for mobile phones */
+@media (max-width: 768px) {
+    .fourth-banner {
+        margin-right: 2rem;  /* Smaller margins for mobile */
+        margin-left: 2rem;
+        margin-top: 10rem;
+    }
+
+    .fourth-first h1 {
+        font-size: 24px;  /* Smaller heading font size for mobile */
+    }
+
+    .fourth-first p {
+        font-size: 14px;  /* Adjust font size for mobile */
+    }
+
+    .fourth-first input {
+        width: 80%;  /* Full width input field on mobile */
+        max-width: none;
+    }
+
+    .fourth-first button {
+        margin-left: 0;  /* Center the button on mobile */
+        margin-top: 1rem;
+        width: 60%;
+        max-width: none;
+    }
+}
+@media (max-width: 1024px) {
+    .about-contact, .whatsapp-facebook-icons {
+        margin-left: 5rem;  /* Reduce margin for tablets */
+        margin-right: 5rem;
+    }
+
+    .fourth-second {
+        margin-top: 5rem;  /* Adjust top margin */
+    }
+}
+
+/* Responsive for mobile phones */
+@media (max-width: 768px) {
+    .about-contact {
+        flex-direction: colomn;  /* Stack the icons vertically on mobile */
+        margin-left: 2rem;  /* Smaller margins for mobile */
+        margin-right: 2rem;
+    }
+
+    .about-contact > div, .whatsapp-facebook-icons > div {
+        margin-bottom: 1rem;  /* Add spacing between stacked elements */
+    }
+
+    .fourth-second h1 {
+        font-size: 20px;  /* Adjust heading size for mobile */
+    }
+
+    .fourth-second p {
+        font-size: 14px;  /* Increase text size for readability on mobile */
+    }
+}

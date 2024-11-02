@@ -1,0 +1,181 @@
+.header-men{
+    background-image: linear-gradient(to right,  #fddde6, #ffffff);
+    display: flex;
+    justify-content: space-between;
+    height: 13rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+.text-part{
+    margin-left: 3.8rem;
+    margin-top: 0.5rem;
+}
+.text-part h2{
+    color: #ff6f3d;
+    font-weight: 800;
+    font-size: 2.2rem;
+}
+.text-part h4{
+    color: #333333;
+    margin-top: -1rem;
+    font-size: 1.3rem;
+    font-weight: 1000;
+}
+.text-part button{
+    background-color: #ff6f3d;
+    border-radius: 3rem;
+    border: none;
+    padding: 10px 25px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: -1rem;
+}
+.image-part img{
+    height: 13rem;
+    margin-right: 7rem;
+}
+.banner-men{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    
+}
+.banner-men h4{
+    margin-right: 6rem;
+}
+.banner-men p{
+    margin-top: 1.6rem;
+}
+.banner-men p span{
+    font-weight: 620;  
+}
+
+
+.explore-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+.explore-button button{
+    background-color: #666666;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 9rem;
+    border: none;
+}
+@media (max-width: 1024px) {
+    .header-men {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    .text-part {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .text-part h2 {
+        font-size: 2rem;
+    }
+
+    .text-part h4 {
+        font-size: 1.2rem;
+    }
+
+    .text-part button {
+        margin-top: 0.5rem;
+        padding: 8px 20px;
+    }
+
+    .image-part img {
+        height: 12rem;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* Styles for mobile phones (screens smaller than 768px) */
+@media (max-width: 768px) {
+    .header-men {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .text-part {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .text-part h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-part h4 {
+        font-size: 1.1rem;
+    }
+
+    .text-part button {
+        margin-top: 0.5rem;
+        padding: 8px 18px;
+    }
+
+    .image-part img {
+        height: 10rem;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+}
+@media (max-width: 1024px) {
+    .cardrow-1, .cardrow-2, .cardrow-3 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .men-card {
+        flex: 0 1 48%; /* 48% width for two cards per row */
+        margin-bottom: 2rem;
+    }
+
+    .men-card img {
+        width: 100%;
+        max-height: 16rem;
+        margin: 0;
+    }
+
+    .explore-button {
+        margin-top: 2rem;
+    }
+}
+
+/* Responsive styles for mobile phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .cardrow-1, .cardrow-2, .cardrow-3 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .men-card {
+        flex: 0 1 48%; /* 48% width for two cards per row */
+        margin-bottom: 1.5rem;
+    }
+
+    .men-card img {
+        width: 100%;
+        max-height: 15rem;
+        margin: 0;
+    }
+
+    .explore-button button {
+        padding: 8px 20px;
+    }
+}
+

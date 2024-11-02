@@ -1,0 +1,43 @@
+.secondcart-banner {
+    margin-top: 5rem;
+    margin-left: 13rem;
+    display: flex;
+    gap: 30rem; 
+}
+ .cart-totals h2 {
+    font-weight: 400; }
+ .cart1 {     
+    display: flex;     
+    gap: 5rem; 
+}  
+.cart2 {     
+    display: flex;     
+    gap: 3rem; 
+} 
+.cart2 .shopppingfee-rate 
+{     
+    margin-top: 0.8rem; 
+} 
+.cart3 {     
+    display: flex;     
+    gap: 6.1rem; 
+} 
+.cart-input p 
+{     
+    font-size: 0.8rem;     
+    font-weight: 600;     
+    margin-left: 2.9rem; 
+} 
+input[type=text] 
+{     
+    padding: 10px 25px;     
+    width: 278px;     
+    margin-left: 3rem;     
+    margin-right: 2rem; 
+} .cart-input button {     
+    height: 2.4rem;     
+    width: 7rem;     
+    margin-left: 8.9rem;     
+    background-color: black;     
+    color: #fff; 
+} 

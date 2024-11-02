@@ -1,0 +1,62 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+header nav{
+  display: flex;
+  gap: 15px;
+  margin-right: 2rem;
+
+}
+header .logo{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin-left: 3rem;
+  font-size: 2rem;
+}
+header nav .cart-icon{
+  margin-right: 2rem;
+}
+header nav .nav-items{
+  text-decoration: none;
+  color: black;
+}
+.email-logout{
+  display: flex;
+  flex-direction: column;
+  margin-top: -1rem;
+}
+.email-logout p{
+  color:blue ;
+}
+.email-logout a{
+ margin-left: 3rem;
+}
+.email-logout a button{
+  background: none;
+  border-radius: 40px;
+  padding: 7px 30px;
+}
+@media (max-width: 768px) {
+  header a.logo {
+    font-size:2rem; /* Slightly reduce the font size on tablets */
+    padding: 8px 0;
+    margin-left: 1rem;
+  }
+}
+
+/* Responsive styles for mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  header a.logo {
+    font-size: 2rem; /* Further reduce the font size on mobile */
+    padding: 6px 0;
+    margin-left: 1rem;
+  }
+}
+

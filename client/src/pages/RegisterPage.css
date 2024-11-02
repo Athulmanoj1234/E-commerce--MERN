@@ -1,0 +1,99 @@
+.register-banner{
+    background-color: #E8DBFC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38.9rem;
+}
+.register-form{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    width: 27rem;
+    height: 24rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+input[type=text] input[type=email]{
+    padding: 10px 25px;
+    width: 278px;
+    margin-left: 3rem;
+    margin-right: 2rem;
+}
+.register-form button{
+    padding: 8.2px 30px;
+    width: 318px;
+    margin-left: 2.2rem;
+    margin-right: 2rem;
+    background-color: #FF0000;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+}
+.register-form p a{
+    text-decoration: none;
+}
+.check-para2{
+    display: flex
+}
+.check-para2 p{
+    font-size: 11px;
+    color: #666666;
+}
+@media (max-width: 768px) {
+    .register-form {
+        width: 22rem;
+        height: auto;
+    }
+
+    input[type=email],
+    input[type=text] {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .register-form button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .check-para2 {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .check-para2 p {
+        margin-left: 0;
+    }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 480px) {
+    .regsiter-form {
+        width: 100%;
+        margin-top: 3rem;
+        padding: 10px;
+    }
+
+    input[type=email],
+    input[type=text] {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .register-form button {
+        width: 100%;
+    }
+
+    .check-para2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .check-para2 p {
+        margin-left: 0;
+    }
+}
+
