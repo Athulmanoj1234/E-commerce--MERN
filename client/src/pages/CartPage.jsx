@@ -66,9 +66,13 @@ import { Link } from 'react-router-dom';
 
 
  async function cartDelete(productId){
+      console.log(productId);
       const response = await axios.post('http://localhost:4000/cartdelete', { productId }, {withCredentials: true});
       setCartproduct((prev=> prev.filter(product => product._id !== productId ))); //if productId does not matches it will bw true and array will not change if productId isequal ie product id matches that product will be excluded
+      
   }
+
+  console.log(cartProduct);
 
 
   return (

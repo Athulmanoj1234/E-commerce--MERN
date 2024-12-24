@@ -39,7 +39,7 @@ const Banner = () => {
     <div className='card-overall'>
      { menProducts && (
          menProducts.map(eachProduct=> (
-       <div className='card-image'>
+       <div className='card-image' style={{width: '18rem'}}>
           <Link to={`/product/${eachProduct._id}`} style={{textDecoration: 'none', color: 'black'}}><img src={`http://localhost:4000/${eachProduct.productCover}`} alt='Avatar'/></Link>
           <div className='card-info'>
           <Link to={`/product/${eachProduct._id}`} style={{textDecoration: 'none', color: 'black'}}><h4>{eachProduct.title}</h4></Link>

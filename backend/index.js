@@ -10,39 +10,50 @@ import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import fs from 'file-system';
 import { fileURLToPath } from 'url';
-import path from 'path';
+import path from 'path'; 
 import productModel from './product/product.js';
 import cartModel from './cart/cart.js';
 import { error } from 'console';
 import Razorpay from 'razorpay';
 import crypto from 'crypto';
-
- 
+import nodemailer from 'nodemailer';
+import 'dotenv/config'
+import dotenv from 'dotenv';
+import {razorKey, razorSecret} from './constants/constants.js'
+  
+    
 //import cartModel from './cart/cart.js';
-
-const app = express();
-const port = 4000;
+ 
+const app = express(); 
+const port = process.env.PORT || 4000;
 //const corsOptions = { origin: ['http://localhost:3000'], credentials: true};
-const salt = bcrypt.genSaltSync(10); 
+const salt = bcrypt.genSaltSync(10);  
 const secret = "jbfhj56hgkfhgklhnlkh56565";
-const adminSecret = "fhsdjfhodsihgo454234";
+const adminSecret = "fhsdjfhodsihgo454234"; 
 const upload = multer({ dest: 'uploads/' });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+dotenv.config();
 
-const razorApiKey = 'rzp_test_8R3WHpR2dyeLyY';
-const razorApiSecret = 'Spg9F3z1eOoTn6iLYbHPoo7h';
+const razorApiKey = razorKey;
+const razorApiSecret = razorSecret;
 
 
 
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
-app.use(express.json());
+app.use(express.json()); 
 app.use(cookieParser());
-app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use('/uploads', express.static(__dirname + '/uploads'));  
 
-mongoose.connect('mongodb://localhost:27017/E-Commerce').then(()=>{
-    console.log('database is connected');
-})
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log('Database is connected'); 
+  })
+  .catch((err) => {
+    console.error('Database connection error:', err.message);
+  });
+
  
 app.post('/register', async(req, res) =>{
     const {username, email, password} = req.body;
@@ -145,7 +156,7 @@ app.post('/adminlogin', async (req, res) => {
             res.cookie('adminToken', token).json({ id: adminDoc.id, businessname, adminCover:adminDoc.adminCover });
           }
         }
-      );
+      ); 
     } catch (error) {
       // General error handling
       res.status(500).json({ message: "An error occurred", error: error.message });
@@ -155,7 +166,7 @@ app.get('/adminprofile', (req, res)=> {
     const adminToken = req.cookies.adminToken;
     
       // Check if the token exists
-      if (!adminToken) {
+      if (!adminToken) { 
         return res.status(401).json({ message: "Token is missing. Please log in." });
     }
 
@@ -166,14 +177,15 @@ app.get('/adminprofile', (req, res)=> {
             }
 
         // If token is valid, send user info
-        return res.json(info);
+        console.log(info);
+          res.json(info);
         
     }); 
    
 })
 app.post('/adminlogout', (req, res) =>{
     res.clearCookie('adminToken', {path: '/'}); 
-    res.json({messege: "logged out successfully"});
+    res.json({messege: "logged out successfully"}); 
 })
 app.post('/productupload', upload.single('files'), async (req, res)=> {
     const{originalname, path} = req.file;
@@ -191,7 +203,9 @@ app.post('/productupload', upload.single('files'), async (req, res)=> {
     }else{
         console.log(info);
     }
-    console.log(req.body);
+
+    req.body ? console.log(req.body) : console.log("not received req body");
+    
     const {title, price, offerprice,description, category} = req.body;
    
     const productDoc = await productModel.insertMany({
@@ -205,7 +219,7 @@ app.post('/productupload', upload.single('files'), async (req, res)=> {
     }); 
       if(!productDoc){
         res.json({messege: "failed to upload post..some database error"});
-      }else{
+      }else{ 
         res.json(productDoc);
       } 
         })  
@@ -213,6 +227,7 @@ app.post('/productupload', upload.single('files'), async (req, res)=> {
 
 app.get('/adminproduct', async (req,  res)=> {
     const productDoc = await productModel.find().populate('author', ['businessname']).limit(9);
+    console.log(productDoc);
     res.json(productDoc);
 })
 
@@ -296,33 +311,15 @@ app.get('/electronicscategory', async (req, res)=> {
 
 app.get('/phonescategory', async (req, res)=> {
 
-        try {
-          const razorPay = new Razorpay({
-            key_id: razorApiKey,
-            key_secret: razorApiSecret,
-          });
-      
-          const { options } = req.body;
-      
-          // Create the order
-          const orderDetails = await razorPay.orders.create({ options });
-      
-          // Check if orderDetails are valid
-          if (!orderDetails) {
-            return res.status(400).json({ message: "Incorrect data or data does not come in correct format" });
-          }
-      
-          // Success case
-          res.status(200).json(orderDetails);
+    const phonesDoc = await productModel.find({ category: 'Phones' })
+    if(phonesDoc){
+        res.json(phonesDoc);
+    }else{
+        res.json({ messege: 'cannot retrive phones document' });
+    }
        
-        } catch (error) {
-          // Catch any errors and handle them
-          console.error(error);
-          res.status(500).json({ message: "Server error occurred", error: error.message });
-        }
-      });
-      
-
+})
+    
 app.get('/editproduct/:id', async (req, res)=> {
 
    const { id } = req.params;
@@ -566,6 +563,32 @@ app.post('/ordersignature', (req, res)=> {
         res.json({ messege: "signature does not received.. in the backend" });  
              
          }
+})
+
+app.post('/sendmail', (req, res) => {
+    const {email} = req.body;
+    if(email){
+      
+       const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        auth: {
+            user: 'athulmanoj344@gmail.com',
+            pass: 'rynrmvpsxyggcdag'
+        }
+       })
+       
+          transporter.sendMail({
+            to: email,
+            sub: "Payment Confirmation For Your Product",
+            html: "your order is confirmed we will contect you for collecting the delevery address",
+          })
+       
+          res.json('notification send to your email');
+
+    }else{
+      res.json('email not received');
+    }
 })
 
 

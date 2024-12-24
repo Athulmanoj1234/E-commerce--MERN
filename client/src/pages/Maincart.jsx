@@ -14,7 +14,7 @@ const Maincart = () => {
   const [cartProducts, setCartProducts] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [total, setTotal] = useState('');
-  const [address, setAddress] = useState('');
+  const [email, setEmail] = useState('');
   const [mobilenumber, setMobilenumber] = useState('');
 
   useEffect(() => {
@@ -51,15 +51,17 @@ const Maincart = () => {
     axios.get('http://localhost:4000/finalcart').then(response=> {
         const cartDetails = response.data;
         setTotal(cartDetails.total);
+        
     })
   }, [])
 
+  console.log(total);
    
 
       const paymentSubmit = async (e)=> {
          e.preventDefault();
  
-         const amount = total;
+         const amount = total * 100; //convert .cents to full amount
          const currency = 'INR';
          const receipt = 'djkf34343';
          
@@ -85,6 +87,7 @@ const Maincart = () => {
 
                   if(paymentResponse.status == 200){
                     alert(isPaymentDone.messege);
+                    await axios.post('http://localhost:4000/sendmail', {email});
                   }else{
                     alert('payment was unsuccessful or invalid signature')
                   }
@@ -184,14 +187,14 @@ const Maincart = () => {
             Total: ${total}
            
           </div>
-          <input type='text' placeholder='enter your full address' required value={address} onChange={e=> setAddress(e.target.value)}/>
+          <input type='text' placeholder='enter your full address' required value={email} onChange={e=> setEmail(e.target.value)}/>
 
           
-          { address && (
+          { email && (
           <button style={{marginTop: '1rem', marginLeft: '19rem', marginTop: '-2rem', backgroundColor: 'blue', border: 'none',
                        padding: '10px 18px', borderRadius: '10px', color: 'white'}} onClick={paymentSubmit}>Pay Now</button>
             ) }
-            { !address && (
+            { !email && (
                 <p style={{color: 'brown'}}>pay option will be only displayed if you enter mobile number</p>
              ) }
           </div>

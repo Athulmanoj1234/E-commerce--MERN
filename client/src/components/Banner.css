@@ -93,11 +93,7 @@ button.collections-button .button-arrow{
     max-height: 17rem;
     width: 13rem;
 }
-.card-image{
-    width: 14rem;
-    display: flex;
-    flex-direction: column;
-}
+
 .card-image:hover{
     transform: scale(1.05);
     cursor: pointer;
@@ -200,6 +196,7 @@ button.collections-button .button-arrow{
     width: 14rem;
     display: flex;
     flex-direction: column;
+    
 }
 .card-image1:hover{
     transform: scale(1.05);

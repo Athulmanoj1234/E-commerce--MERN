@@ -38,6 +38,7 @@ const AddProduct = () => {
       console.error('Error fetching profile:');
     });
  }, []);
+ console.log(businessInfo);
 
  async function adminLogout(ev){
   ev.preventDefault();
@@ -50,8 +51,14 @@ const AddProduct = () => {
    const adminCover = businessInfo?.adminCover;
    const businessname = businessInfo?.businessname;
 
-async function productUpload(ev){
+   console.log(title, price, offerPrice, description, categoryselect, files[0]);
+
+  
+const productUpload = async (ev) => {
+  try{
   ev.preventDefault();
+  console.log("new upload");
+
   const data = new FormData();
   data.set('title', title);
   data.set('price', price);
@@ -59,11 +66,19 @@ async function productUpload(ev){
   data.set('description', description);
   data.set('category', categoryselect);
   data.set('files', files[0]);
-   
-  console.log(data);
+ 
+  
+  // data ? console.log(data) : console.log("product data cannot be found");
 
-  const response = await axios.post('http://localhost:4000/productupload', data, {withCredentials: true} );
+  const response = await axios.post('http://localhost:4000/productupload', data, {withCredentials: true});
+
+  console.log(response.data);
+
+}catch(err){
+  console.log("the product is not uploaded", err);
+ }
 }
+
 
   return (
     <div>
@@ -141,7 +156,7 @@ async function productUpload(ev){
             <input type='file' onChange={ev => {setFiles(ev.target.files)}}/>
             </div>
             <div className='upload-button'>
-            <Link to='/allproducts'><button style={{ marginRight: '2rem', marginBottom: '1rem' }}>upload</button></Link>
+            <button style={{ marginRight: '2rem', marginBottom: '1rem' }} type="submit">upload</button>
             <Link to='/allproducts'><button>your product List</button></Link>
             </div>
            </div>

@@ -41,7 +41,7 @@ const MenPage = () => {
          }}>
        { menProducts.length > 0 && (  
           menProducts.map(product=> (   
-        <div className='men-card'>
+        <div className='men-card' style={{width: '18rem'}}>
        
           <Link to={`/product/${product._id}`}><img src={`http://localhost:4000/${product.productCover}`} alt='men-image' style={{ height: '12rem', width: '12rem' }}/></Link>
           <Link to={`/product/${product._id}`} style={{textDecoration: 'none', color: 'black'}}><h4>{product.title}</h4></Link>

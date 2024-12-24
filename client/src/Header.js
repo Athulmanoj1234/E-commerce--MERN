@@ -44,7 +44,7 @@ async function logout() {
 return (
     <div>
       <header className='header-container'>
-      <Link to='/' className='logo'>SHOPPER</Link>
+      <Link to='/' className='logo'>CARTIFY</Link>
       <nav>
         <Link to='/shop' className='nav-items'>Shop</Link>
         <Link to='/phones' className='nav-items'>Phones</Link>
