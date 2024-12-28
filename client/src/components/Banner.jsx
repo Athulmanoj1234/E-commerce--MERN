@@ -43,7 +43,7 @@ const Banner = () => {
           <Link to={`/product/${eachProduct._id}`} style={{textDecoration: 'none', color: 'black'}}><img src={`http://localhost:4000/${eachProduct.productCover}`} alt='Avatar'/></Link>
           <div className='card-info'>
           <Link to={`/product/${eachProduct._id}`} style={{textDecoration: 'none', color: 'black'}}><h4>{eachProduct.title}</h4></Link>
-          <Link to={`/product/${eachProduct._id}`} style={{textDecoration: 'none', color: 'black'}}><p>${eachProduct.offerprice}</p></Link>
+          <Link to={`/product/${eachProduct._id}`} style={{textDecoration: 'none', color: 'black'}}><p>Rs.{eachProduct.offerprice}</p></Link>
         </div> 
        </div>
        ) )  ) }

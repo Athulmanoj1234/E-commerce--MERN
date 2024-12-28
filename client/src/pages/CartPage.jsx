@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../userContext';
 import { Link } from 'react-router-dom';
+import { SiVelog } from 'react-icons/si';
 
 
 
@@ -48,11 +49,13 @@ import { Link } from 'react-router-dom';
     }
   }
   const calculateTotal =  () => {
-      const total =  cartProduct.reduce((price, product) => {
+          
+        const total =  cartProduct.reduce((price, product) => {
         const quantity = quantities[product._id] || 1;
         return price + (product.offerprice * quantity);
       
       }, 0);
+      
      try{
           axios.post('http://localhost:4000/total', {total}, {withCredentials: true}).then( response=> {
                console.log(response.data);
@@ -131,7 +134,7 @@ import { Link } from 'react-router-dom';
                     <td><p>Subtotal</p></td>
                     </div>
                     <div className='subtotal-rate'>
-                    <td><p>${calculateTotal()}</p></td>
+                    <td><p>Rs.{cartProduct ? calculateTotal(): ''}</p></td>
                     </div>
                 </div>    
                 </tr>
@@ -148,10 +151,10 @@ import { Link } from 'react-router-dom';
                 <tr>
                 <div className='cart3'>    
                     <div className='total'>
-                    <td><p>Toatal</p></td>
+                    <td><p>Total</p></td>
                     </div>
                     <div className='total-rate'>
-                    <td><p>${calculateTotal()}</p></td>
+                    <td><p>Rs.{cartProduct ? calculateTotal(): ''}</p></td>
                     <Link to='/cart'><button style={{marginTop: '1rem', marginLeft: '-4rem', backgroundColor: 'blue', border: 'none',
                        padding: '10px 18px', borderRadius: '10px', color: 'white'}}>Pay</button></Link>
                     </div>

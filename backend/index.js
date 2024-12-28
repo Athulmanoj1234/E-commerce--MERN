@@ -14,7 +14,7 @@ import path from 'path';
 import productModel from './product/product.js';
 import cartModel from './cart/cart.js';
 import { error } from 'console';
-import Razorpay from 'razorpay';
+import Razorpay from 'razorpay'; 
 import crypto from 'crypto';
 import nodemailer from 'nodemailer';
 import 'dotenv/config'
@@ -34,13 +34,13 @@ const upload = multer({ dest: 'uploads/' });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
-
+   
 const razorApiKey = razorKey;
-const razorApiSecret = razorSecret;
+const razorApiSecret = razorSecret; 
+ 
 
 
-
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'] }));
 app.use(express.json()); 
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));  
@@ -226,7 +226,7 @@ app.post('/productupload', upload.single('files'), async (req, res)=> {
 });
 
 app.get('/adminproduct', async (req,  res)=> {
-    const productDoc = await productModel.find().populate('author', ['businessname']).limit(9);
+    const productDoc = await productModel.find().populate('author', ['businessname']).limit(9).sort(-1);
     console.log(productDoc);
     res.json(productDoc);
 })
@@ -581,7 +581,7 @@ app.post('/sendmail', (req, res) => {
           transporter.sendMail({
             to: email,
             sub: "Payment Confirmation For Your Product",
-            html: "your order is confirmed we will contect you for collecting the delevery address",
+            html: "messege from cartify that...your order is confirmed we will contect you for collecting the delevery address",
           })
        
           res.json('notification send to your email');
@@ -589,9 +589,9 @@ app.post('/sendmail', (req, res) => {
     }else{
       res.json('email not received');
     }
-})
+})   
 
 
 app.listen(port, (req, res) =>{
     console.log(`you are listening to the port ${port}`);
-});     
+});      

@@ -39,8 +39,6 @@ return (
         <button type='submit'>continue</button>
         <p>Create an account? <span><Link to='/register'>click Here</Link></span></p>
         <div  className='check-para'>
-        <input type='checkbox'/>
-        <p>By continuing i agree to the terms of use & privacy policy</p>
         </div>
       </div>
       </form>
