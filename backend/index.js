@@ -399,7 +399,7 @@ app.get('/add-to-cart/:id', async (req, res) => {
         
         if(userCart){
             const productExists = userCart.products.some(product => 
-                product.equals(new mongoose.Types.ObjectId(productId))
+                product.equals(new mongoose.Types.ObjectId(productId)) //product.equals(new mongoose.Types.ObjectId(productId)): For each product in the products array, the .equals() method is used to compare the product's ID with the productId argument. The new mongoose.Types.ObjectId(productId) is creating a new ObjectId instance from the provided productId, which is likely a string.
             );
 
             if (!productExists) { 
